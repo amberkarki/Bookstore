@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example </title>
+        <link type="text/css" rel="stylesheet"
+	href="css/bootstrap-4.2.1-dist/css/bootstrap.min.css"
+	th:href="@{css/bootstrap-4.2.1-dist/css/bootstrap.min.css}" />
+    </head>
+    <body>
+  
+        <div class = "row jumbotron">
+
+        <form  th:action="@{/login}" method="post">
+        	<div  style = "margin-left:50%">
+	            <label> User Name as user: <input class = "col-md-12" type="text" name="username" placeholder="user"/> </label>
+	           	<label> Password as user: <input class = "col-md-12" type="password" name="password" placeholder = "user"/> </label>
+	            <button class = "btn btn-primary" type="submit">Sign In</button>
+            </div>
+        </form>
+          <div  class = "col-md-12"  th:if="${param.error}">
+            <h1>Invalid username and password.</h1>
+        </div>
+        <div class = "col-md-12" th:if="${param.logout}">
+            <h1>You have been logged out.</h1>
+        </div>
+        </div>
+    </body>
+</html>
