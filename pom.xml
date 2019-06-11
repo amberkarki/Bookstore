@@ -89,7 +89,7 @@
 
   
  	<build>
- 	<finalName>BookStoreWebApp</finalName>
+ 	<finalName>BookStore</finalName>
 	<!--	<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
