@@ -15,6 +15,7 @@
 	<artifactId>BookStore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BookStore</name>
+	<url>http://maven.apache.org</url>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -81,16 +82,28 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+		
 	</dependencies>
 
-	<build>
-		<plugins>
+  
+ 	<build>
+ 	<finalName>BookStoreWebApp</finalName>
+	<!--	<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				  
 				
 			</plugin>
 		</plugins>
+		-->
 	</build>
 
 </project>
