@@ -13,7 +13,7 @@
 
 	<groupId>com.BookStore</groupId>
 	<artifactId>BookStore</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>BookStore</version>
 	<name>BookStore</name>
 	<url>http://maven.apache.org</url>
 	<description>Demo project for Spring Boot</description>
