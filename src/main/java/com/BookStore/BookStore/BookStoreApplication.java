@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import com.BookStore.BookStore.domain.Book;
 import com.BookStore.BookStore.domain.BookRepository;
@@ -17,10 +19,14 @@ import com.BookStore.BookStore.domain.User;
 import com.BookStore.BookStore.domain.UserRepository;
 
 @SpringBootApplication
-public class BookStoreApplication {
+public class BookStoreApplication extends SpringBootServletInitializer{
 	private static final Logger log = LoggerFactory.getLogger(BookStoreApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(BookStoreApplication.class, args);
+	}
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(BookStoreApplication.class);
 	}
 	@Bean
 	public CommandLineRunner bookrepo(BookRepository bkr, CategoryRepository ctr, UserRepository usr) {
