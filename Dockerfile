@@ -1,3 +1,5 @@
-FROM tomcat:8
-# Take the war and copy to webapps of tomcat
-COPY /target/*.war /usr/local/tomcat/webapps/BookStore-BookStore.war
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
